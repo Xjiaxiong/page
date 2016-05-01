@@ -1,0 +1,45 @@
+﻿<DOCTYPE HTML>
+<html>
+<style type="text/css">
+#wrap{
+	border:1px solid #000;
+	margin:0 auto;
+	text-align:center;
+	width: 350px;
+	height: 150px;
+
+}
+</style>
+<script type="text/javascript">
+
+function count(){
+var str = document.getElementById("txt").value;
+var maxLength = 0;
+var result = "";
+while(str!=''){
+    oldStr = str;
+    getStr = str.charAt(0);
+    str = str.replace(new RegExp(getStr,"g"),"");
+    if( oldStr.length-str.length > maxLength){
+        maxLength = oldStr.length-str.length;
+        result ="出现次数最多的是"+ getStr +" "+ "次数为：" + maxLength;
+    }
+}
+var wrap=document.getElementById("wrap");
+
+document.write(result);
+}
+var cs=document.getElementsByTagName("input");
+cs.style.color="red";
+cs.style.margin="0 800px";
+cs.syle.float="left";
+</script>
+<body>
+<div id="wrap">
+	<p>我们能为您统计出<b>字符串</b>中出现次数最多的字符</p>
+	<p><em>请输入；</em></p>
+<input type="text" id="txt">
+<input type="button" value="统计" onclick="count()">
+</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>动画菜单</title>
+<style type="text/css">
+* { margin: 0; padding: 0; font-size: 14px; }
+a { color: #333; text-decoration: none }
+ul{ list-style: none; }
+.nav {height: 30px; border-bottom: 5px solid #F60; margin-left:50px; width:600px;}
+.nav li { float: left; position:relative; height:30px; width:120px }
+.nav li a { display: block; height: 30px; text-align: center; line-height: 30px; width:120px; background: #efefef; margin-left: 1px; }
+.subNav{ position:absolute; top:30px; left:0; width:120px; height:0; overflow:hidden}
+.subNav li a{ background:#ddd }
+.subNav li a:hover{ background:#efefef}
+</style>
+<script>
+window.onload=function(){
+    var aLi=document.getElementsByTagName('li');
+    for(var i=0; i<aLi.length; i++){
+	   aLi[i].onmouseover=function(){
+            var oSubNav=this.getElementsByTagName('ul')[0];
+            if(oSubNav){
+            var This=oSubNav;
+            clearInterval(This.time);
+            This.time=setInterval(function(){
+                    This.style.height=This.offsetHeight+16+"px";
+                    if(This.offsetHeight>=120)
+                    clearInterval(This.time);
+                },30)
+             }
+          }
+        //鼠标离开菜单，二级菜单动画收缩起来。		
+	 aLi[i].onmouseout=function(){
+            var oSubNav=this.getElementsByTagName('ul')[0];
+            if(oSubNav){
+            var This=oSubNav;
+            clearInterval(This.time);
+            This.time=setInterval(function(){
+                    This.style.height=This.offsetHeight-16+"px";
+                    if(This.offsetHeight<=0)
+                    clearInterval(This.time);
+                },30)
+             }
+          }
+		
+	}
+}
+</script>
+</head>
+<body>
+<ul class="nav">
+    <li><a href="#">难度选择</a>
+    	<ul class="subNav">
+        	<li><a href="#">简单</a></li>
+            <li><a href="#">中等</a></li>
+            <li><a href="#">困难</a></li>
+            <li><a href="#">变态</a></li>
+        </ul>
+    </li>
+    <li><a href="#">点歌类型</a>
+    	<ul class="subNav">
+        	<li><a href="#">歌星点歌</a></li>
+            <li><a href="#">拼音点歌</a></li>
+            <li><a href="#">歌词点歌</a></li>
+            <li><a href="#">识音点歌</a></li>
+        </ul>
+    </li>
+    <li><a href="#">招聘</a>
+        <ul class="subNav">
+            <li><a href="#">最新职位信息</a></li>
+            <li><a href="#">培养方向</a></li>
+        </ul>
+    </li>
+    <li><a href="#">新闻</a>
+        <ul class="subNav">
+            <li><a href="#">历史新闻</a></li>
+            <li><a href="#">今日最佳</a></li>
+            <li><a href="#">周最佳</a></li>
+            <li><a href="#">年最佳</a></li>
+        </ul>
+    </li>
+    <li><a href="#">关于我们</a>
+        <ul class="subNav">
+            <li><a href="#">起步</a></li>
+            <li><a href="#">发展</a></li>
+            <li><a href="#">融资</a></li>
+            <li><a href="#">壮大</a></li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>

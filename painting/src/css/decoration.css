@@ -1,0 +1,64 @@
+#header {
+    background-image: url("../img/2.gif");
+    height: 109px;
+    padding: 0 10px;
+}
+#header h1{
+    font-size:48px ;
+    font-weight: normal;
+    padding: 20px 0  0 170px;
+}
+#header h2{
+    font-size: 18px;
+    font-weight: normal;
+    text-align: right;
+    margin-bottom: 20px;
+
+}
+#topMenu{
+    background: #cccccc no-repeat;
+    height: 48px;
+
+}
+#topMenu ul{
+    font-size: 24px;
+    line-height: 1em;
+    list-style: none;
+    padding: 14px 30px 0 0;
+    text-align: right;
+}
+#topMenu li{
+    display: inline;
+}
+#sidebar{
+    float: right;
+    padding:20px 30px 10px 0;
+    text-align: right;
+    width: 150px;
+}
+#sidebar h3{font-size: 24px;font-weight: normal;}
+#sidebar ul{line-height: 1.8em; list-style: none; padding-bottom: 20px;}
+a{text-decoration: none}
+.blogItem{
+    padding-bottom: 20px;
+}
+.blogItem p{text-indent:2em;line-height: 22px;text-align: center;}
+.blogItem h2{font-size: 24px;}
+.blogItem h3{
+    background:bottom left no-repeat ;
+    font-size: 14px;
+    padding-bottom: 6px;
+}
+#comments{
+    margin: 20px 0 0 20px;
+}
+#comments li{
+    margin-bottom: 10px;
+}
+.commentSep{
+    background: peru bottom left;
+}
+#wrap{
+    background-image: url("../img/1.gif");
+}
+
